@@ -7,21 +7,21 @@ This is *refactored* version, written for my [article](https://blog.0x08.ru/old-
 * Adopted for Java 17 features
 * Moved build to Apache Maven
 
+This is *not* continuation of original project, neither something stable and/or ready for daily use, just small sample of refactoring process.
+
 -----
 JPC is a fast modern x86 PC emulator capable of booting Windows up to Windows 95 (and windows 98 in safe mode) and some graphical linuxes. It has a full featured graphical debugger with time travel mode along with standard features like break and watch points. 
 
 ### Running
 To get started with JPC just run it with:<br>
-java -jar JPCApplication.jar -boot hda -hda yourdiskimage.img<br><br>
+java -jar target/jpc-refactored-1.0-SNAPSHOT.jar -boot hda -hda yourdiskimage.img<br><br>
 or get a list of options by running:<br>
-java -jar JPCApplication.jar -help
+java -jar target/jpc-refactored-1.0-SNAPSHOT.jar -help
 
 ### Building
 To build JPC run:<br>
-make application
+mvn clean package
 
-To build the debugger run:<br>
-make debugger
 
 To run some dos games easily, put them in a directory on your real computer and use JPC's ability to view a directory tree as a virtual FAT32 drive. For example, if some games are in "dosgames" in the directory where you expanded all the JPC files then type:<br/>
 	java -jar JPCApplication.jar -boot fda -fda resources/images/floppy.img -hda dir:dosgames<br/>
